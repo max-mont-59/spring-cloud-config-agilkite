@@ -2,7 +2,7 @@ zuul:
   prefix: /api
   ignoredServices: '*'
   routes:
-    projects-service: /project/**
+    projects-service: /projects/**
     api-gateway: /gateway/**
 
 server:
