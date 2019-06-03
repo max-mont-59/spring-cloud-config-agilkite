@@ -3,6 +3,7 @@ zuul:
   ignoredServices: '*'
   routes:
     projects-service: /project/**
+    iterations-service: /iteration/**
     api-gateway: /gateway/**
 
 server:
