@@ -2,9 +2,10 @@ zuul:
   prefix: /api
   ignoredServices: '*'
   routes:
-    projects-service: /project/**
-    iterations-service: /iteration/**
-    api-gateway: /gateway/**
+    echo:
+      path: /project/**
+      serviceId: projects-service
+      stripPrefix: true
 
 hystrix:
   command:
