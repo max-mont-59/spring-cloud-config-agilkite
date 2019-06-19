@@ -8,7 +8,7 @@ zuul:
 
 hystrix:
   command:
-    myusers-service:
+    projects-service:
       execution:
         isolation:
           thread:
