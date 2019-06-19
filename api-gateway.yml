@@ -6,6 +6,14 @@ zuul:
     iterations-service: /iteration/**
     api-gateway: /gateway/**
 
+hystrix:
+  command:
+    myusers-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
 server:
   port: 8080
   compression:
