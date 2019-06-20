@@ -2,15 +2,14 @@ zuul:
   prefix: /api
   ignoredServices: '*'
   routes:
-    projects-service: /project/**
-    iterations-service: /iteration/**
+    projects-service:
+      path: /project/**
+      serviceId: projects-service
     api-gateway: /gateway/**
-    
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+
+projects-service.ribbon.listOfServers: "http://projects-service:8083"
 
 ribbon:
-  ConnectTimeout: 3000
-  ReadTimeout: 60000
   restclient:
     enabled: true
 
