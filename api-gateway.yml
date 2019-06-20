@@ -2,27 +2,16 @@ zuul:
   prefix: /api
   ignoredServices: '*'
   routes:
-    echo:
-      path: /gateway/**
-      serviceId: api-gateway
-      stripPrefix: true
+    projects-service: /project/**
+    iterations-service: /iteration/**
+    api-gateway: /gateway/**
 
-hystrix:
-  command:
-    myusers-service:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 30000
-
-api-gateway:
-  ribbon:
-    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
-    listOfServers: http://discovery-server:8761/eureka/
-    ConnectTimeout: 1000
-    ReadTimeout: 3000
-    MaxTotalHttpConnections: 500
-    MaxConnectionsPerHost: 100
+server:
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: application/json,text/css,application/javascript
+    min-response-size: 2048
 
 eureka:
   client:
