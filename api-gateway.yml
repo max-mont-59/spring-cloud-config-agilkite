@@ -5,6 +5,14 @@ zuul:
     projects-service: /project/**
     iterations-service: /iteration/**
     api-gateway: /gateway/**
+    
+ribbon:
+  eureka:
+    enabled: false
+
+users:
+  ribbon:
+    listOfServers: http://discovery-server:8761/eureka/
 
 server:
   port: 8080
