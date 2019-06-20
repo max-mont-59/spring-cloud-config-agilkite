@@ -6,15 +6,11 @@ zuul:
     iterations-service: /iteration/**
     api-gateway: /gateway/**
     
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 60000
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 
 ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
   restclient:
     enabled: true
 
