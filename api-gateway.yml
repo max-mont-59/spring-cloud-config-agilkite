@@ -7,12 +7,8 @@ zuul:
     api-gateway: /gateway/**
     
 ribbon:
-  eureka:
-    enabled: false
-
-users:
-  ribbon:
-    listOfServers: http://discovery-server:8761/eureka/
+  restclient:
+    enabled: true
 
 server:
   port: 8080
