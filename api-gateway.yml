@@ -3,10 +3,6 @@ zuul:
   ignoredServices: '*'
   routes:
     echo:
-      path: /project/**
-      serviceId: projects-service
-      stripPrefix: true
-    echo:
       path: /gateway/**
       serviceId: api-gateway
       stripPrefix: true
@@ -19,7 +15,7 @@ hystrix:
           thread:
             timeoutInMilliseconds: 30000
 
-myusers-service:
+api-gateway:
   ribbon:
     NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
     listOfServers: http://discovery-server:8761/eureka/
