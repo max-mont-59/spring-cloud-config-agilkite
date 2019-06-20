@@ -6,6 +6,10 @@ zuul:
       path: /project/**
       serviceId: projects-service
       stripPrefix: true
+    echo:
+      path: /gateway/**
+      serviceId: api-gateway
+      stripPrefix: true
 
 hystrix:
   command:
