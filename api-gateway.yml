@@ -1,5 +1,5 @@
 zuul:
-  prefix: /api
+  prefix: /test
   ignoredServices: '*'
   routes:
     projects-service: /project/**
