@@ -5,9 +5,13 @@ zuul:
     projects-service:
       path: /project/**
       serviceId: projects-service
+    iterations-service:
+      path: /iterations/**
+      serviceId: iterations-service
     api-gateway: /gateway/**
 
 projects-service.ribbon.listOfServers: "http://projects-service:8083"
+iterations-service.ribbon.listOfServers: "http://iterations-service:8084"
 
 ribbon:
   restclient:
