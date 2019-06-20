@@ -6,7 +6,7 @@ zuul:
       path: /project/**
       serviceId: projects-service
     iterations-service:
-      path: /iterations/**
+      path: /iteration/**
       serviceId: iterations-service
     api-gateway: /gateway/**
 
