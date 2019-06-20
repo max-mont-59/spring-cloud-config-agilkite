@@ -6,6 +6,14 @@ zuul:
     iterations-service: /iteration/**
     api-gateway: /gateway/**
     
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
 ribbon:
   restclient:
     enabled: true
