@@ -2,20 +2,9 @@ zuul:
   prefix: /api
   ignoredServices: '*'
   routes:
-    projects-service:
-      path: /project/**
-      serviceId: projects-service
-    iterations-service:
-      path: /iteration/**
-      serviceId: iterations-service
+    projects-service: /project/**
+    iterations-service: /iteration/**
     api-gateway: /gateway/**
-
-projects-service.ribbon.listOfServers: "http://localhost:8083"
-iterations-service.ribbon.listOfServers: "http://localhost:8084"
-
-ribbon:
-  restclient:
-    enabled: true
 
 server:
   port: 8080
@@ -24,6 +13,9 @@ server:
     mime-types: application/json,text/css,application/javascript
     min-response-size: 2048
 
+spring:
+  zipkin:
+    baseUrl: http://tracing-server:9411
 eureka:
   client:
     serviceUrl:
